@@ -1,0 +1,181 @@
+/* Estilos Generales para Modo Oscuro */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    width: 100%;
+    background-color: #1e1e1e; /* Fondo más oscuro para el encabezado */
+    padding: 20px 0;
+    text-align: center;
+    color: #61dafb; /* Texto de color azul claro */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Cuadro detrás de los títulos */
+header h1, header h2 {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido en modo oscuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra suave */
+    display: inline-block;
+    color: #e0e0e0;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-entry {
+    animation: fadeInUp 1.5s ease-out;
+    font-size: 2rem;
+    color: #e0e0e0;
+}
+
+.animated-text {
+    animation: slideIn 2s ease-out;
+    font-size: 2rem;
+    color: #e0e0e0;
+}
+
+/* Slider de Imágenes con Animación de Entrada */
+.slider {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.slider img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeInOut 15s infinite;
+}
+
+/* Añadimos un retraso para cada imagen para que aparezcan en secuencia */
+.slider img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slider img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.slider img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+/* Animación de Entrada y Salida */
+@keyframes fadeInOut {
+    0%, 20% { opacity: 1; }  /* Aparece */
+    33%, 100% { opacity: 0; } /* Desvanece */
+}
+
+/* Tabla de Autos */
+table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #333333; /* Encabezado de tabla oscuro */
+    color: #61dafb; /* Texto azul claro */
+    font-weight: bold;
+}
+
+td {
+    background-color: #1e1e1e; /* Fondo oscuro para celdas */
+    border-bottom: 1px solid #333333;
+}
+
+/* Botones */
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #4b92c3; /* Color más oscuro al pasar el mouse */
+}
+
+button:active {
+    background-color: #367899; /* Color aún más oscuro al hacer clic */
+}
+
+/* Estilos de Imagen */
+img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Contenedores y Pies de Página */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #888;
+    background-color: #1e1e1e;
+    color: #61dafb;
+    margin-top: auto;
+}
